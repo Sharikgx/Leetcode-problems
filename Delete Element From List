@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main() {
+    int N, i, element, found = 0;
+    scanf("%d", &N);
+    int arr[N];
+    
+    for(i = 0; i < N; i++) {
+        scanf("%d", &arr[i]);
+    }
+    
+    scanf("%d", &element);
+    
+    for(i = 0; i < N; i++) {
+        if(arr[i] == element && !found) {
+            found = 1;
+        } else if(found) {
+            arr[i - 1] = arr[i];
+        }
+    }
+    
+    if(found) {
+        N--;
+    }
+    
+    for(i = 0; i < N; i++) {
+        printf("%d ", arr[i]);
+    }
+    
+    return 0;
+}
