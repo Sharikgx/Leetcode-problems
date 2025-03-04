@@ -1,20 +1,24 @@
 #include <stdio.h>
 
-int main() {
-    int N, i;
-    scanf("%d", &N);
-    int arr[N];
-    
-    for(i = 0; i < N; i++) {
-        scanf("%d", &arr[i]);
-    }
-    
-    for(i = 0; i < N; i++) {
+void printArray(int arr[], int N) {
+    for (int i = 0; i < N; i++) {
         printf("%d", arr[i]);
-        if(i < N - 1) {
+        if (i < N - 1) {
             printf(" ");
         }
     }
+}
+
+int main() {
+    int N;
+    scanf("%d", &N);
+    int arr[N];
+    
+    for (int i = 0; i < N; i++) {
+        scanf("%d", &arr[i]);
+    }
+    
+    printArray(arr, N);
     
     return 0;
 }
